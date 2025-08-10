@@ -3,7 +3,7 @@ Linux ldap authentication configuration
 
 Required python version >=3.6. No dependencies - core library and nothing more.
 
-This is just part of the original script that contains specific functions that was developed for specific tasks and software. Presented "limited edition" able to install necessary packages (sssd, sssd-ldap and etc.) and configure nss, pam and ssh for ldap authentication.
+This is a part of the original script that contains specific functions that was developed for specific tasks and software. Presented "limited edition" is able to install necessary packages (sssd, sssd-ldap and etc.) and configure nss, pam and sshd for ldap authentication.
 Supported Linux distros: Ubuntu, Debian, Astra, SUSE and OpenSuse, Alt, RedHat and similar like CentOS, RedOS, AlmaLinux should work too.
 
 ```
