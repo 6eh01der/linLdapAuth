@@ -9,6 +9,12 @@ Supported Linux distros: Ubuntu, Debian, Astra, SUSE and OpenSuse, Alt, RedHat a
 ```
 python3 linLdapAuth.py
 ```
+or just
+```
+./linLdapAuth.py
+```
+if linLdapAuth.py has execute permission (chmod +x)
+
 Original configuration files will be copied to the `backupAuthConfig` directory automatically created in the current working directory.
 To NOT backup original configs use `nobackup` option:
 ```
@@ -20,7 +26,7 @@ python3 linLdapAuth.py norestart
 ```
 
 SSSD should be configured separately.
-Example config:
+Example config for Active Directory:
 ```
 [sssd]
 domains=example.com
@@ -41,7 +47,7 @@ fallback_homedir = /home/%u@%d
 use_fully_qualified_names=true
 ldap_referrals=false
 simple_allow_groups=GROUP
-ldap_uri=ldaps://192.168.74.229:636
+ldap_uri=ldaps://dc.example.com:636
 ldap_search_base=dc=example,dc=com?subtree?
 ldap_default_bind_dn=CN=SEARCH_USER,CN=Users,DC=example,DC=com
 ldap_default_authtok=PASSWORD
