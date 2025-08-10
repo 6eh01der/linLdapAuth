@@ -15,7 +15,9 @@ To NOT backup original configs use `nobackup` option:
 python3 linLdapAuth.py nobackup
 ```
 By default last step is sshd restart. To not restart it use `norestart`:
+```
 python3 linLdapAuth.py norestart
+```
 
 SSSD should be configured separately.
 Example config:
