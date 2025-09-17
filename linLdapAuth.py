@@ -25,8 +25,8 @@ def main():
         check_call(["apt-get", "install", "-y", "sssd-client", "openldap-clients", "sssd", "sssd-tools", "sssd-ldap", "openssl"])
         check_call(["control", "system-auth", "sss"])
         if 'nobackup' not in sys.argv:
-            copy2('/etc/nsswitch.conf', f'{sys.argv[1]}')
-            copy2('/etc/openssh/sshd_config', f'{sys.argv[1]}')
+            copy2('/etc/nsswitch.conf', 'backupAuthConf')
+            copy2('/etc/openssh/sshd_config', 'backupAuthConf')
         for line in fileinput.input(['/etc/nsswitch.conf'], inplace=True):
             print(re.sub(r"^(passwd|shadow|group):.*\s*$", "", line), end='')
         with open('/etc/nsswitch.conf', 'a', encoding='utf-8') as file:
@@ -43,7 +43,7 @@ def main():
     elif os.path.isfile('/etc/SUSE-brand'):
         check_call(["zypper", "install", "-y", "sssd-client", "openldap2-client", "sssd", "sssd-tools", "sssd-ldap", "openssl"])
         if 'nobackup' not in sys.argv:
-            copy2('/etc/nsswitch.conf', f'{sys.argv[1]}')
+            copy2('/etc/nsswitch.conf', 'backupAuthConf')
         for line in fileinput.input(['/etc/nsswitch.conf'], inplace=True):
             print(re.sub(r"^(passwd|shadow|group):.*\s*$", "", line), end='')
         with open('/etc/nsswitch.conf', 'a', encoding='utf-8') as file:
