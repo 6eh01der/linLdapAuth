@@ -1,33 +1,33 @@
 # linLdapAuth
-Linux ldap authentication configuration
+Linux ldap authentication configuration script.
 
 Required python version >=3.6. No dependencies - core library and nothing more.
 
-This is part of the original script developed for specific tasks and software. Presented "limited edition" is able to install necessary packages (sssd, sssd-ldap and etc.) and configure nss, pam and sshd for ldap authentication.
+This is part of the original script developed for specific tasks and software. Presented "limited edition" is able to install necessary packages (`sssd`, `sssd-ldap` and etc.) and configure `nss`, `pam` and `sshd` for ldap authentication.
 Supported Linux distros: Ubuntu, Debian, Astra, SUSE and OpenSuse, Alt, RedHat and similar like CentOS, RedOS, AlmaLinux should work too.
 
-```
+```bash
 python3 linLdapAuth.py
 ```
 or just
-```
+```bash
 ./linLdapAuth.py
 ```
-if linLdapAuth.py has execute permission (chmod +x)
+If `linLdapAuth.py` has execute permission (`chmod +x`)
 
 Original configuration files will be copied to the `backupAuthConfig` directory automatically created in the current working directory.
 To prevent backing up original configurations, use the `nobackup` option:
-```
+```bash
 python3 linLdapAuth.py nobackup
 ```
-By default last step is sshd restart. To not restart it use `norestart`:
-```
+By default last step is `sshd` restart. To not restart it use `norestart`:
+```bash
 python3 linLdapAuth.py norestart
 ```
 
 SSSD should be configured separately.
 Example config for Active Directory:
-```
+```ini
 [sssd]
 domains=example.com
 services=nss, pam, ssh
