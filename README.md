@@ -3,7 +3,7 @@ Linux ldap authentication configuration
 
 Required python version >=3.6. No dependencies - core library and nothing more.
 
-This is a part of the original script that contains specific functions that was developed for specific tasks and software. Presented "limited edition" is able to install necessary packages (sssd, sssd-ldap and etc.) and configure nss, pam and sshd for ldap authentication.
+This is part of the original script developed for specific tasks and software. Presented "limited edition" is able to install necessary packages (sssd, sssd-ldap and etc.) and configure nss, pam and sshd for ldap authentication.
 Supported Linux distros: Ubuntu, Debian, Astra, SUSE and OpenSuse, Alt, RedHat and similar like CentOS, RedOS, AlmaLinux should work too.
 
 ```
@@ -16,7 +16,7 @@ or just
 if linLdapAuth.py has execute permission (chmod +x)
 
 Original configuration files will be copied to the `backupAuthConfig` directory automatically created in the current working directory.
-To NOT backup original configs use `nobackup` option:
+To prevent backing up original configurations, use the `nobackup` option:
 ```
 python3 linLdapAuth.py nobackup
 ```
